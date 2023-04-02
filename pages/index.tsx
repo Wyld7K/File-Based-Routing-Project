@@ -7,7 +7,7 @@ export default function Home() {
 					<Link href="/portfolio">Portfolio</Link>
 				</li>
 				<li>
-					<Link href="/clients">Portfolio</Link>
+					<Link href="/clients">Clients</Link>
 				</li>
 			</ul>
 			<h1>Home</h1>
