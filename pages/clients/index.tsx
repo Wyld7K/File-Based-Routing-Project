@@ -14,7 +14,16 @@ const ClientsPage: React.FC = () => {
 			<ul>
 				{clients.map(client => (
 					<li key={client.id}>
-						<Link href={`/clients/${client.name}`}>{client.name}</Link>
+						<Link
+							href={{
+								// Same as FileSystem
+								pathname: '/clients/[id]',
+								// Concrete Value of query
+								query: { id: client.id },
+							}}
+						>
+							{client.name}
+						</Link>
 					</li>
 				))}
 			</ul>
