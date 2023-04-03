@@ -26,6 +26,11 @@ export const getStaticProps: GetStaticProps<{
 		props: {
 			products,
 		},
+		redirect: {
+			destination: '/no-data',
+		},
+		notFound: true,
+		revalidate: 10,
 	};
 };
 
