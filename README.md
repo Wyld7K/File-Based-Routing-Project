@@ -1,38 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+1 of 3 unhandled errors
 
-## Getting Started
+Unhandled Runtime Error
+Error: Hydration failed because the initial UI does not match what was rendered on the server.
 
-First, run the development server:
+Warning: Expected server HTML to contain a matching <h1> in <div>.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+See more info here: https://nextjs.org/docs/messages/react-hydration-error
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Component Stack
+h1
+div
+div
+Call Stack
+throwOnHydrationMismatch
+node_modules/react-dom/cjs/react-dom.development.js (12507:0)
+tryToClaimNextHydratableInstance
+node_modules/react-dom/cjs/react-dom.development.js (12535:0)
+updateHostComponent
+node_modules/react-dom/cjs/react-dom.development.js (19902:0)
+beginWork
+node_modules/react-dom/cjs/react-dom.development.js (21618:0)
+HTMLUnknownElement.callCallback
+node_modules/react-dom/cjs/react-dom.development.js (4164:0)
+Object.invokeGuardedCallbackDev
+node_modules/react-dom/cjs/react-dom.development.js (4213:0)
+invokeGuardedCallback
+node_modules/react-dom/cjs/react-dom.development.js (4277:0)
+beginWork$1
+node_modules/react-dom/cjs/react-dom.development.js (27451:0)
+performUnitOfWork
+node_modules/react-dom/cjs/react-dom.development.js (26557:0)
+workLoopSync
+node_modules/react-dom/cjs/react-dom.development.js (26466:0)
+renderRootSync
+node_modules/react-dom/cjs/react-dom.development.js (26434:0)
+performConcurrentWorkOnRoot
+node_modules/react-dom/cjs/react-dom.development.js (25738:0)
+workLoop
+node_modules/scheduler/cjs/scheduler.development.js (266:0)
+flushWork
+node_modules/scheduler/cjs/scheduler.development.js (239:0)
+MessagePort.performWorkUntilDeadline
+node_modules/scheduler/cjs/scheduler.development.js (533:0)
