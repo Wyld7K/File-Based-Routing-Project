@@ -11,10 +11,8 @@ import { Product } from './index';
 
 const ProductDetailPage: React.FC<
 	InferGetStaticPropsType<typeof getStaticProps>
-> = props => {
-	const { product } = props;
-
-	if (!product) return <p>Loading...</p>;
+> = ({ product }) => {
+	console.log(product);
 	return (
 		<React.Fragment>
 			<h1>{product.title}</h1>
@@ -30,8 +28,13 @@ export const getStaticProps: GetStaticProps<{
 
 	const productID = (params as ParsedUrlQuery).pid;
 
-	const products = await getData();
-	const product = products.find((product: Product) => product.id === productID);
+	const filePath = path.join(process.cwd(), 'data', 'dummy-backend.json');
+
+	const jsonData = await promises.readFile(filePath);
+
+	const { product } = JSON.parse(jsonData.toString()).products.find(
+		(product: Product) => product.id === productID
+	);
 
 	return {
 		props: {
@@ -40,13 +43,6 @@ export const getStaticProps: GetStaticProps<{
 	};
 };
 
-async function getData(): Promise<Product> {
-	const filePath = path.join(process.cwd(), 'data', 'dummy-backend.json');
-	console.log(filePath);
-	const jsonData = await promises.readFile(filePath);
-
-	return JSON.parse(jsonData.toString()).products;
-}
 export const getStaticPaths = async () => {
 	return {
 		paths: [
@@ -54,7 +50,7 @@ export const getStaticPaths = async () => {
 			{ params: { pid: 'p2' } },
 			{ params: { pid: 'p3' } },
 		],
-		fallback: true,
+		fallback: false,
 	};
 };
 
