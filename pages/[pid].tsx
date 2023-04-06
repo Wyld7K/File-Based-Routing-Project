@@ -32,7 +32,7 @@ export const getStaticProps: GetStaticProps<{
 
 	const jsonData = await promises.readFile(filePath);
 
-	const { product } = JSON.parse(jsonData.toString()).products.find(
+	const product = JSON.parse(jsonData.toString()).products.find(
 		(product: Product) => product.id === productID
 	);
 
